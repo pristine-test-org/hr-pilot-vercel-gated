@@ -133,8 +133,9 @@ export default function LandingPage() {
 
         <section className="mx-auto max-w-6xl px-4 py-24 md:px-6">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Everything your team needs, in one dashboard
+            <h2 className="features-heading text-3xl font-semibold tracking-tight md:text-4xl">
+              <span className="features-heading-part">Everything your team needs,</span>{" "}
+              <span className="features-heading-part">in one dashboard</span>
             </h2>
             <p className="mt-4 text-muted-foreground">
               From applying for leave to checking a payslip, HR Pilot keeps every routine HR task
@@ -146,12 +147,12 @@ export default function LandingPage() {
             {FEATURES.map((feature) => (
               <div
                 key={feature.title}
-                className="group rounded-2xl border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-2xl border-2 border-primary/35 bg-gradient-to-br from-primary/10 via-card to-card p-6 shadow-sm transition-all hover:shadow-md"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <feature.icon className="h-5 w-5" />
+                <div className="flex h-12 w-12 scale-105 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-transform">
+                  <feature.icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
+                <h3 className="mt-4 text-lg font-semibold text-primary">{feature.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{feature.description}</p>
               </div>
             ))}

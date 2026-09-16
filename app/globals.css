@@ -117,6 +117,180 @@
   --sidebar-ring: oklch(0.65 0.19 264);
 }
 
+@keyframes features-heading-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes features-heading-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.features-heading-part {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  animation: features-heading-rise 680ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.features-heading-part:nth-child(2) {
+  animation-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .features-heading-part {
+    animation: features-heading-fade 420ms ease forwards;
+    transform: none;
+  }
+
+  .login-well .login-pass {
+    transition: none;
+  }
+}
+
+.login-well {
+  overflow: hidden;
+  border-radius: calc(var(--radius) * 1.7);
+  background: var(--card);
+  color: var(--card-foreground);
+  box-shadow: 0 1px 2px oklch(0.145 0 0 / 0.05);
+}
+
+.login-well ::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.login-well .login-head {
+  padding: 1.15rem 1.15rem 0.85rem;
+  text-align: left;
+}
+
+.login-well .login-mark {
+  display: flex;
+  width: 2.15rem;
+  height: 2.15rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--radius) * 0.9);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.login-well .login-title {
+  margin: 0.7rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.login-well .login-lede {
+  margin: 0.3rem 0 0;
+  color: var(--muted-foreground);
+  font-size: 0.8125rem;
+}
+
+.login-well .login-instrument {
+  margin: 0 0.85rem 0.85rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.25);
+  background: color-mix(in oklch, var(--muted) 30.25%, var(--card));
+}
+
+.login-well .login-line {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  align-items: center;
+  min-height: 2.7rem;
+}
+
+.login-well .login-k {
+  padding: 0 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.login-well input {
+  height: 2.7rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0 0.85rem 0 0;
+  font-size: 0.95rem;
+  caret-color: var(--primary);
+  outline: none;
+}
+
+.login-well input:focus-visible {
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.login-well .login-pass {
+  display: grid;
+  grid-template-rows: 0fr;
+  border-top: 0 solid var(--border);
+  transition:
+    grid-template-rows 480ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-top-width 480ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.login-well:has(.login-user:not(:placeholder-shown)) .login-pass {
+  grid-template-rows: 1fr;
+  border-top-width: 1px;
+}
+
+.login-well .login-pass-inner {
+  overflow: hidden;
+}
+
+.login-well .login-error {
+  margin: 0 1.15rem 0.65rem;
+  color: var(--destructive);
+  font-size: 0.8125rem;
+}
+
+.login-well .login-submit {
+  display: inline-flex;
+  width: 100%;
+  height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 0;
+  border-radius: 0;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.login-well .login-submit:hover {
+  background: color-mix(in oklch, var(--primary) 88%, black);
+}
+
+.login-well .login-submit:focus-visible {
+  outline: 3px solid color-mix(in oklch, var(--primary) 45%, transparent);
+  outline-offset: -3px;
+}
+
+.login-well .login-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
