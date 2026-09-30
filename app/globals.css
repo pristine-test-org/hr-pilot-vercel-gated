@@ -297,6 +297,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    border-top: 4px solid var(--primary);
   }
   html {
     @apply font-sans;
