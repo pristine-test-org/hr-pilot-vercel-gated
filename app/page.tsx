@@ -185,6 +185,9 @@ export default function LandingPage() {
             <span>HR Pilot &copy; {new Date().getFullYear()}</span>
           </div>
           <span>A practice HR SaaS project.</span>
+          <Link href="/impeccable-test-drive" className="underline">
+            Impeccable test drive
+          </Link>
         </div>
       </footer>
     </div>
