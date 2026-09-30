@@ -1,0 +1,27 @@
+.td-page { min-height: 100vh; background: #ffffff; color: #171717; font-family: var(--font-sans), system-ui, sans-serif; }
+.td-main { padding: 4rem 0; }
+.td-inner { max-width: 40rem; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Intentional, for Impeccable's test drive: gradient text on the heading. */
+.td-title {
+  font-size: 2.5rem; font-weight: 600; letter-spacing: -0.025em;
+  background: linear-gradient(90deg, #6d28d9, #ec4899);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* Intentional, for Impeccable's test drive: a hard-coded colour that is not in DESIGN.md's palette. */
+.td-badge { display: inline-block; margin-bottom: 1rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: #ff7a00; color: #ffffff; font-size: 0.875rem; }
+
+/* Intentional, for Impeccable's test drive: low-contrast text, light grey on white. */
+.td-muted { margin-top: 1rem; color: #c8c8c8; }
+
+/* Intentional, for Impeccable's test drive: link text under the 11px floor. */
+.td-link { display: inline-block; margin-top: 1.5rem; font-size: 10px; color: oklch(0.47 0.17 264); }
+
+/* Intentional, for Impeccable's test drive: a layout property in a transition. */
+.td-bar { height: 0.5rem; width: 30%; margin-top: 2rem; border-radius: 999px; background: oklch(0.47 0.17 264); transition: width 0.3s; }
+.td-bar:hover { width: 100%; }
+
+/* Intentional, for Impeccable's test drive: body text flush with the viewport edges, no background. */
+.td-edge { margin: 2rem 0 0; padding: 0; max-width: none; }
